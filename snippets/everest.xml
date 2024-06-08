@@ -15,17 +15,22 @@
            fetch="https://gitlab.com/everestos/"
            revision="qpr2" />
 
+    <!-- GitHub (Ankit) -->
+  <remote  name="ankit"
+           fetch="https://github.com/ankitstha/"
+           revision="qpr2" />
+
   <!-- Rootdir -->
   <project path="manifest" name="manifest" remote="everest" />
   <project path="art" name="art" groups="pdk" remote="everest" />
-  <project path="bionic" name="bionic" groups="pdk" remote="everest" />
+  <project path="bionic" name="bionic" groups="pdk" remote="ankit" />
   <project path="everest-maintainers" name="everest-maintainers" remote="everest" />
 
   <!-- Bootable -->
   <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="everest" />
 
   <!-- Build -->
-  <project path="build/make" name="build" groups="pdk" remote="everest" >
+  <project path="build/make" name="build" groups="pdk" remote="ankit" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -34,7 +39,7 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="everest" >
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="ankit" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -107,7 +112,7 @@
   <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="everest" />
 
   <!-- System -->
-  <project path="system/core" name="system_core" groups="pdk" remote="everest" />
+  <project path="system/core" name="system_core" groups="pdk" remote="ankit" />
   <project path="system/update_engine" name="system_update_engine" remote="everest" />
 
   <!-- Vendor -->
